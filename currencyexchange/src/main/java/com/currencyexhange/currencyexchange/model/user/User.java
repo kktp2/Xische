@@ -1,22 +1,70 @@
 package com.currencyexhange.currencyexchange.model.user;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.util.Date;
 
+@Entity
+@Table(name = "\"user\"")
 public class User {
+
+    @Id
     private int id;
+
+    @Column
+    private String password;
+
+    @Column
     private String name;
+
+    @Column
     private String email;
-    private String phone;
-    private String address;
+
+    @Column
     private UserGroup userType;
+
+    @Column
     private Date subscribedSince;
 
-    public Date getCreationDate() {
+    public User() {
+    }
+
+    public User(int id, String name, String email, UserGroup userType, Date subscribedSince) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.userType = userType;
+        this.subscribedSince = subscribedSince;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", userType=" + userType +
+                ", subscribedSince=" + subscribedSince +
+                '}';
+    }
+
+    public Date getSubscribedSince() {
         return subscribedSince;
     }
 
-    public void setCreationDate(Date creationDate) {
-        this.subscribedSince = creationDate;
+    public void setSubscribedSince(Date subscribedSince) {
+        this.subscribedSince = subscribedSince;
     }
 
     public int getId() {
@@ -41,22 +89,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public UserGroup getUserType() {
