@@ -1,4 +1,4 @@
-package com.currencyexhange.currencyexchange.service;
+package com.currencyexhange.currencyexchange.service.discount;
 
 import com.currencyexhange.currencyexchange.model.Billing;
 

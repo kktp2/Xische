@@ -3,6 +3,7 @@ package com.currencyexhange.currencyexchange.service;
 import com.currencyexhange.currencyexchange.model.Billing;
 import com.currencyexhange.currencyexchange.model.user.User;
 import com.currencyexhange.currencyexchange.model.user.UserGroup;
+import com.currencyexhange.currencyexchange.service.discount.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

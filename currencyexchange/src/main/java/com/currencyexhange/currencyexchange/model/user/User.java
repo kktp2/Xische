@@ -1,14 +1,36 @@
 package com.currencyexhange.currencyexchange.model.user;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.util.Date;
 
+@Entity
+@Table(name = "\"user\"")
 public class User {
 
+    @Id
     private int id;
+
+    @Column
+    private String password;
+
+    @Column
     private String name;
+
+    @Column
     private String email;
+
+    @Column
     private UserGroup userType;
+
+    @Column
     private Date subscribedSince;
+
+    public User() {
+    }
 
     public User(int id, String name, String email, UserGroup userType, Date subscribedSince) {
         this.id = id;
@@ -16,6 +38,14 @@ public class User {
         this.email = email;
         this.userType = userType;
         this.subscribedSince = subscribedSince;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
